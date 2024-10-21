@@ -1,6 +1,7 @@
 {
   "name": "ar-portfolio",
   "version": "0.0.0",
+  "author": "Anand Raja",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
