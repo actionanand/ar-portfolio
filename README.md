@@ -2,6 +2,14 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.5.
 
+## Custom Angular Material
+
+1. Angular Material setup command
+
+```sh
+ng add @angular/material
+```
+
 ## Cloning Guide
 
 1.  Clone only the remote primary HEAD (default: origin/master)
