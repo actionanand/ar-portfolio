@@ -10,6 +10,23 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ng add @angular/material
 ```
 
+2. Theme can be generated with a custom color with the following schematic
+
+```sh
+ng generate @angular/material:m3-theme
+```
+
+3. Sources
+
+   - [Official Guide - Custom Theme](https://material.angular.io/guide/theming)
+   - [How to define 6 palettes in Angular Material 3?](https://stackoverflow.com/questions/78807737/how-to-define-6-palettes-in-angular-material-3)
+   - [How to use custom color palette in @angular/material](https://stackoverflow.com/questions/78340496/how-to-use-custom-color-palette-in-angular-material-experimental-expected-co)
+   - [Material Theme Builder](https://material-foundation.github.io/material-theme-builder/)
+
+4. Setting `use-system-variables: true` in your Angular Material theme can cause the theme colors to disappear.
+   - Why This Happens:
+     - **CSS Variable Priority**: When you enable `use-system-variables`, Angular Material starts using CSS variables to define its theme colors. These variables have a lower priority than the default styles. If you have any other styles that target the same elements, they might be overriding the theme colors.
+
 ## Cloning Guide
 
 1.  Clone only the remote primary HEAD (default: origin/master)
