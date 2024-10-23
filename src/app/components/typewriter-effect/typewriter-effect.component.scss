@@ -1,0 +1,27 @@
+/*
+.type-text {
+  font-family: "Waiting for the Sunrise", cursive;
+  font-weight: 400;
+  font-style: bold;
+  font-size: 20px;
+}
+*/
+
+.type-blink {
+  border-right-style: solid;
+  animation: blink-animation 1s steps(5, start) infinite;
+  -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+  to {
+    // opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}

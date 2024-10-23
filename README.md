@@ -245,7 +245,48 @@ To configure the pre-commit hook, simply add a `precommit` npm script. We want t
 
    7. For more, please [check](https://prettier.io/docs/en/ignore.html)
 
+## wiki
+
+1. Using famous `typed.js` package
+
+```ts
+import { Component, OnInit } from '@angular/core';
+import Typed from 'typed.js';
+
+@Component({
+  selector: 'app-home',
+  standalone: true,
+  imports: [],
+  styles: [
+    `
+      span {
+        color: #fff;
+        padding-bottom: 4px;
+        letter-spacing: 1px;
+        border-bottom: 3px solid #149ddd;
+      }
+    `,
+  ],
+  template: ` <span class="typed"></span> `,
+})
+export class HomeComponent implements OnInit {
+  ngOnInit(): void {
+    var options = {
+      strings: ['', 'Full Stack', 'WEB', 'Frontend Angular'],
+      typeSpeed: 120,
+      backSpeed: 100,
+      loop: true,
+    };
+
+    var typed = new Typed('.typed', options);
+    typed.reset(true);
+  }
+}
+```
+
 ## Resources
 
 - [GitHub Actions for Angular](https://github.com/rodrigokamada/angular-github-actions)
 - [Angular 16 - milestone release](https://github.com/actionanand/ng16-signal-milestone-release)
+- [Imitating a blink tag with CSS3 animations - stackoverflow](https://stackoverflow.com/questions/13955163/imitating-a-blink-tag-with-css3-animations)
+- [Typewriter Animation in Angular 17 - medium](https://medium.com/@nikolovlyudmil/typewriter-animation-in-angular-17-f1c503058d41)
