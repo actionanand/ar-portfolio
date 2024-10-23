@@ -3,7 +3,7 @@ import { AsyncPipe } from '@angular/common';
 
 import { map } from 'rxjs/operators';
 
-import { TypewriterEffectService } from '../../services/typewriter-effect.service';
+import { TypewriterEffectService } from '../../../services/typewriter-effect.service';
 
 @Component({
   selector: 'app-typewriter-effect',

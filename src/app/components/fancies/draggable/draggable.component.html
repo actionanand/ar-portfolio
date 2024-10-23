@@ -1,0 +1,24 @@
+<div
+  class="skill-wrapper"
+  [class.dragging]="currentlyDragging !== undefined"
+  (mousemove)="mouseMove($event)"
+  (touchmove)="touchMove($event)">
+  <div
+    *ngFor="let skill of skills; index as i"
+    class="skill"
+    [style.left]="skillPositions[i][0]"
+    [style.top]="skillPositions[i][1]"
+    [style.transform]="'translate(-50%,-50%) ' + skillPositions[i][2]"
+    [class.dragging]="currentlyDragging !== undefined"
+    (mousedown)="startDragging(i)"
+    (mouseup)="stopDragging()"
+    (mouseleave)="stopDragging()"
+    (touchend)="stopDragging()"
+    (touchcanceled)="stopDragging()"
+    (touchstart)="startDragging(i)">
+    <span class="skill-pill">
+      {{ skill }}
+    </span>
+  </div>
+  <div class="play-tip"><img src="my-app/point.svg" alt />play with me</div>
+</div>
