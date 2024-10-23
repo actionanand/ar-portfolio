@@ -290,3 +290,5 @@ export class HomeComponent implements OnInit {
 - [Angular 16 - milestone release](https://github.com/actionanand/ng16-signal-milestone-release)
 - [Imitating a blink tag with CSS3 animations - stackoverflow](https://stackoverflow.com/questions/13955163/imitating-a-blink-tag-with-css3-animations)
 - [Typewriter Animation in Angular 17 - medium](https://medium.com/@nikolovlyudmil/typewriter-animation-in-angular-17-f1c503058d41)
+- [Avoid duplicate styles in Angular Material theme - stackoverflow](https://stackoverflow.com/questions/63786558/avoid-duplicate-styles-in-angular-material-theme)
+- [Avoiding duplicated theming styles - github](https://github.com/angular/components/blob/main/guides/duplicate-theming-styles.md)
