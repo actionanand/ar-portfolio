@@ -1887,6 +1887,35 @@
   resolved "https://registry.yarnpkg.com/@msgpackr-extract/msgpackr-extract-win32-x64/-/msgpackr-extract-win32-x64-3.0.3.tgz#0aa5502d547b57abfc4ac492de68e2006e417242"
   integrity sha512-x0fWaQtYp4E6sktbsdAqnehxDgEc/VwM7uLsRCYWaiGu0ykYdZPiS8zCWdnjHwyiumousxfBm4SO31eXqwEZhQ==
 
+"@ngrx/effects@18.1.0":
+  version "18.1.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/effects/-/effects-18.1.0.tgz#858599031ae417f0b5538c86b5c38f69a6e22b03"
+  integrity sha512-Z52ZDv2gf15ukrpcpj6sB76WWEkvo8+dGZvSnpWRMWkysD7owdDTZOc+lcEflmtUzI4aMPn2TmrJG6ZTjvixGw==
+  dependencies:
+    tslib "^2.0.0"
+
+"@ngrx/eslint-plugin@^18.1.0":
+  version "18.1.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/eslint-plugin/-/eslint-plugin-18.1.0.tgz#4ed544ed064b6ff82a32a3d76937a5b13e4a9a55"
+  integrity sha512-IR8ngksDhjlB+KR5MsVZrihUGe0Qle4xNW6FUE7oVuqmUDdtZjnu8mCy4nnlU7HWQDgrdF+9D/+Y4j8jxLnf5A==
+  dependencies:
+    semver "^7.3.5"
+    strip-json-comments "3.1.1"
+
+"@ngrx/operators@18.1.0":
+  version "18.1.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/operators/-/operators-18.1.0.tgz#9149a22f736f75d97a07c249f34e94be48faff25"
+  integrity sha512-C4/57yiBigrFisrEWFA7XS8OgpGK2Vmvu7y6MYltLzK8FTr2r9FsTCG9oxlOHIxGzd5EJrzHNqqBzqVh/9/nww==
+  dependencies:
+    tslib "^2.3.0"
+
+"@ngrx/store@18.1.0":
+  version "18.1.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-18.1.0.tgz#5cdbe3c47b84a3ebae85b5e0c55acc41619e8c56"
+  integrity sha512-ijxAzJMOb3LeiegpJNNaL8BkcxNg2DVgd/NTiGCJNI7vVUEvtlSRPSWDDYY3Z9Q5oVyqJG9CP0IN/o5FGAGyAw==
+  dependencies:
+    tslib "^2.0.0"
+
 "@ngtools/webpack@18.2.3":
   version "18.2.3"
   resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-18.2.3.tgz#81056a6f83818caf6acb0f4d385543912a9f30cd"

@@ -1,17 +1,40 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
-import { MatIconModule } from '@angular/material/icon';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatButtonModule } from '@angular/material/button';
+import { HeaderComponent } from './components/header/header.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatButtonModule, MatDividerModule, MatIconModule],
+  imports: [RouterOutlet, HeaderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'Essentials 18';
+  // @HostBinding('class')
+  // currentTheme: 'theme-light' | 'theme-dark' = 'theme-light';
+
+  title = 'AR Portfolio';
+
+  // onThemeChanged() {
+  //   this.isDarkMode = !this.isDarkMode;
+  //   console.log(this.isDarkMode);
+  //   if (this.isDarkMode) {
+  //     this.currentTheme = 'theme-dark';
+  //   } else {
+  //     this.currentTheme = 'theme-light';
+  //   }
+  // }
+
+  // onThemeChanged() {
+  //   this.isDarkMode = !this.isDarkMode;
+
+  //   document.body.classList.remove('theme-light', 'theme-dark');
+
+  //   if (this.isDarkMode) {
+  //     document.body.classList.add('theme-dark');
+  //   } else {
+  //     document.body.classList.add('theme-light');
+  //   }
+  // }
 }
