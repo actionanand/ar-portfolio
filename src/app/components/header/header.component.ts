@@ -1,7 +1,7 @@
-import { AfterViewInit, Component, inject, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, Inject, inject, Renderer2, ViewChild } from '@angular/core';
 
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { NgIf } from '@angular/common';
+import { DOCUMENT, NgIf } from '@angular/common';
 import { MatSidenav, MatSidenavContainer, MatSidenavContent } from '@angular/material/sidenav';
 // import { delay, filter } from 'rxjs/operators';
 // import { NavigationEnd } from '@angular/router';
@@ -39,27 +39,42 @@ export class HeaderComponent implements AfterViewInit {
   isMobile = true;
   isDarkMode = false;
 
+  readonly myProfile = {
+    title: 'Portfolio Of Anand',
+    name: 'Anand N S',
+    designation: 'Senior Software Engineer',
+  };
+
   private bPtObserver = inject(BreakpointObserver);
+  private renderer = inject(Renderer2);
   private router = inject(Router);
 
+  constructor(@Inject(DOCUMENT) private document: Document) {}
+
   onThemeChanged() {
+    const themes = ['theme-light', 'theme-dark'];
+    const documentBody = this.document.body;
+
     this.isDarkMode = !this.isDarkMode;
 
-    document.body.classList.remove('theme-light', 'theme-dark');
+    // this.document.body.classList.remove('theme-light', 'theme-dark');
+    // document.body.classList.remove('theme-light', 'theme-dark');
+
+    themes.forEach(theme => {
+      this.renderer.removeClass(documentBody, theme);
+    });
 
     if (this.isDarkMode) {
-      document.body.classList.add('theme-dark');
+      this.renderer.addClass(documentBody, themes[1]);
     } else {
-      document.body.classList.add('theme-light');
+      this.renderer.addClass(documentBody, themes[0]);
     }
   }
 
   ngAfterViewInit() {
-    console.log('ngAfterViewInit');
-
     // this.sidenav.mode = 'side';
 
-    this.bPtObserver.observe(['(max-width: 800px)']).subscribe({
+    this.bPtObserver.observe(['(max-width: 850px)']).subscribe({
       next: res => {
         console.log(res);
 
@@ -76,7 +91,7 @@ export class HeaderComponent implements AfterViewInit {
     });
 
     // this.observer
-    //   .observe(['(max-width: 800px)'])
+    //   .observe(['(max-width: 850px)'])
     //   .pipe(delay(1))
     //   .subscribe((res: any) => {
     //     if (res.matches) {

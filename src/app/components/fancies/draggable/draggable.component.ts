@@ -1,14 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { NgFor } from '@angular/common';
+
+import { CdkDrag } from '@angular/cdk/drag-drop';
+import { NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-draggable',
   standalone: true,
-  imports: [NgFor],
+  imports: [CdkDrag, NgStyle],
   templateUrl: './draggable.component.html',
   styleUrl: './draggable.component.scss',
 })
 export class DraggableComponent implements OnInit {
+  readonly dragTip = 'Drag the skill inside the container';
+
   skills = [
     'angular',
     'javascript',
@@ -23,54 +27,38 @@ export class DraggableComponent implements OnInit {
     'html',
     'unity',
     'illustration',
+    '2',
+    '4',
+    '7',
   ];
-  skillPositions: string[][] = [];
-  currentlyDragging: number | undefined;
-  mouseX: number | undefined;
-  mouseY: number | undefined;
 
-  ngOnInit() {
-    for (let i = 0; i < this.skills.length; i++) {
-      const pos: string[] = [
-        i * (100 / (this.skills.length - 1)) + '%',
-        ((i + 1) % 3) * 50 + '%',
-        this.getRandomRotation(),
-      ];
-      this.skillPositions.push(pos);
-    }
+  skillsPills: { skill: string; deg: number; x: number; y: number }[] = [];
+
+  ngOnInit(): void {
+    this.skills = this.shuffleArrayEls(this.skills);
+    this.getRandomDirection(this.skills);
+
+    console.log('skillsPills', this.skillsPills);
   }
 
-  getRandomRotation() {
-    const randomVal = Math.floor(Math.random() * 30) - 15;
-    return `rotate(${randomVal}deg)`;
-  }
+  shuffleArrayEls = (skills: string[]) => {
+    return skills
+      .map(a => ({ sort: Math.random(), value: a }))
+      .sort((a, b) => a.sort - b.sort)
+      .map(a => a.value);
+  };
 
-  startDragging(i: number) {
-    this.currentlyDragging = i;
-  }
+  getRandomDirection(skills: string[]) {
+    let deg = 0;
+    let x = 100;
+    let y = 100;
 
-  mouseMove(e: MouseEvent) {
-    if (this.currentlyDragging == undefined) {
-      return;
-    }
-    this.skillPositions[this.currentlyDragging][0] = e.pageX - 100 + 'px';
-    this.skillPositions[this.currentlyDragging][1] = e.pageY - 40 + 'px';
-  }
+    skills.forEach((skill, i) => {
+      deg = Math.floor(Math.random() * 30) - 15;
+      x = i * (90 / (this.skills.length - 1)); // 90 is the total width of the container (100 - 10)
+      y = ((i + 1) % 3) * 40; // 40*2 is the height of the container (100 - 20)
 
-  touchMove(e: Event) {
-    if (this.currentlyDragging == undefined) {
-      return;
-    }
-    const firstTouch = (e as TouchEvent).touches[0];
-    if (firstTouch) {
-      this.mouseMove({ pageX: firstTouch.pageX, pageY: firstTouch.pageY } as MouseEvent);
-    }
-  }
-
-  stopDragging() {
-    if (this.currentlyDragging) {
-      this.skillPositions[this.currentlyDragging][2] = this.getRandomRotation();
-    }
-    this.currentlyDragging = undefined;
+      this.skillsPills.push({ skill, deg, x, y });
+    });
   }
 }

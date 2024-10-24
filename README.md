@@ -292,3 +292,4 @@ export class HomeComponent implements OnInit {
 - [Typewriter Animation in Angular 17 - medium](https://medium.com/@nikolovlyudmil/typewriter-animation-in-angular-17-f1c503058d41)
 - [Avoid duplicate styles in Angular Material theme - stackoverflow](https://stackoverflow.com/questions/63786558/avoid-duplicate-styles-in-angular-material-theme)
 - [Avoiding duplicated theming styles - github](https://github.com/angular/components/blob/main/guides/duplicate-theming-styles.md)
+- [How to Shuffle an Array of Items Using JavaScript or TypeScript](https://www.freecodecamp.org/news/how-to-shuffle-an-array-of-items-using-javascript-or-typescript/)
