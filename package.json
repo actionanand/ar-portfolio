@@ -4,7 +4,7 @@
   "author": "Anand Raja",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --port 3700",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "build:gh": "ng build --base-href /ar-portfolio/",
